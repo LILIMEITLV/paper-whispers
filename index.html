@@ -276,19 +276,35 @@
 
 <script async src="https://tally.so/widgets/embed.js"></script>
 <script>
-  // Rescue plan: if the embedded form gives no sign of life within 7 seconds,
-  // hide the empty card and show a clear button that opens the form directly.
+  // Rescue plan for slow or limited browsers (WhatsApp/Instagram in-app):
+  // 1. If Tally's helper script hasn't started the form after 3.5s, load the
+  //    form directly into the iframe ourselves (works without the helper).
+  // 2. If there is still no sign of life at 9s, swap in a direct button.
+  // 3. The moment the form does wake up, bring it back automatically.
   (function () {
     var alive = false;
+    var card = document.getElementById('form-card');
+    var rescue = document.getElementById('form-rescue');
     window.addEventListener('message', function (e) {
-      if (e.origin && e.origin.indexOf('tally.so') !== -1) alive = true;
+      if (e.origin && e.origin.indexOf('tally.so') !== -1) {
+        alive = true;
+        card.hidden = false;
+        rescue.hidden = true;
+      }
     });
     setTimeout(function () {
-      if (!alive) {
-        document.getElementById('form-card').hidden = true;
-        document.getElementById('form-rescue').hidden = false;
+      var f = card.querySelector('iframe');
+      if (f && !f.src) {
+        f.src = f.getAttribute('data-tally-src');
+        f.style.height = '1950px';
       }
-    }, 7000);
+    }, 3500);
+    setTimeout(function () {
+      if (!alive) {
+        card.hidden = true;
+        rescue.hidden = false;
+      }
+    }, 9000);
   })();
 </script>
 <script>
