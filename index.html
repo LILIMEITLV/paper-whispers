@@ -219,7 +219,7 @@
     </div>
     <div class="fact">
       <div class="k">50 NIS</div>
-      <div class="v">All materials included</div>
+      <div class="v">All materials included. Pay after we confirm your seat.</div>
     </div>
     <div class="fact">
       <div class="k">Jaffa's Greek Market</div>
@@ -254,7 +254,7 @@
 
   <section id="register">
     <h2>Hold your seat</h2>
-    <p class="lede">One minute, a few short questions. Choose your date inside the form.</p>
+    <p class="lede">One minute, a few short questions. Choose your date inside the form. We will hold your seat and send you the payment link on WhatsApp.</p>
     <div class="form-card" id="form-card">
       <iframe data-tally-src="https://tally.so/embed/kdxDa1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
               loading="eager" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"
@@ -262,9 +262,9 @@
     </div>
     <div class="form-rescue" id="form-rescue" hidden>
       <p>The form is being shy. No matter, it opens in its own page.</p>
-      <a class="cta gold" href="https://tally.so/r/kdxDa1">Open the registration form</a>
+      <a class="cta gold" href="https://tally.so/r/kdxDa1?utm_source=rescue">Open the registration form</a>
     </div>
-    <p class="form-alt">Trouble with the form? <a href="https://tally.so/r/kdxDa1" target="_blank" rel="noopener">Open it in a new tab</a></p>
+    <p class="form-alt">Trouble with the form? <a href="https://tally.so/r/kdxDa1?utm_source=newtab" target="_blank" rel="noopener">Open it in a new tab</a></p>
   </section>
 
 
@@ -328,12 +328,16 @@
     fbq('track', 'PageView');
 
     // When Tally confirms a submission, tell Meta a registration happened.
+    // The thank-you page fires the same event with the same eventID, so if Tally
+    // redirects there too, Meta dedupes the pair instead of counting two.
     window.addEventListener('message', function (e) {
       if (typeof e.data !== 'string') return;
       try {
         var d = JSON.parse(e.data);
         if (d && d.event === 'Tally.FormSubmitted') {
-          fbq('track', 'CompleteRegistration', { content_name: 'paper-whispers-intro' });
+          var id = 'pw-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+          try { sessionStorage.setItem('pwRegEventId', id); } catch (x) {}
+          fbq('track', 'CompleteRegistration', { content_name: 'paper-whispers-intro' }, { eventID: id });
         }
       } catch (err) { /* not a Tally message */ }
     });
