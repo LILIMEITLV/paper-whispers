@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>We have your details | Paper Whispers | LILIMEI</title>
+<meta name="description" content="You are on the list for the next Paper Whispers session in Jaffa.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #F8F0E5;
+    --gold: #E4A745;
+    --pink: #D3C0B3;
+    --taupe: #7F6F60;
+    --brown: #684E40;
+    --ink: #1a1512;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    opacity: .35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.40 0 0 0 0 0.33 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index: 5;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 22px; position: relative; z-index: 10; width: 100%; }
+  header { padding: 26px 0 0; text-align: center; }
+  .wordmark {
+    font-family: 'Forum', serif;
+    letter-spacing: .42em;
+    font-size: 15px;
+    color: var(--brown);
+    text-indent: .42em;
+  }
+  .wordmark small { display: block; letter-spacing: .28em; font-size: 9.5px; color: var(--taupe); margin-top: 2px; text-indent: .28em; }
+
+  main { flex: 1; }
+  .mark { text-align: center; padding: 56px 0 0; }
+  .mark svg { width: 58px; height: 58px; }
+
+  h1 {
+    font-family: 'Forum', serif;
+    font-weight: 400;
+    font-size: clamp(36px, 9.5vw, 52px);
+    line-height: 1.08;
+    text-align: center;
+    margin-top: 22px;
+  }
+  h1 em { font-style: normal; color: var(--gold); }
+  .lede {
+    text-align: center;
+    color: #55483d;
+    font-size: 17px;
+    margin: 18px auto 0;
+    max-width: 440px;
+  }
+
+  .card {
+    margin-top: 34px;
+    background: #fffdf9;
+    border: 1px solid var(--pink);
+    border-radius: 14px;
+    padding: 26px 24px;
+    text-align: center;
+  }
+  .card p { font-size: 15.5px; color: #55483d; }
+  .card p + p { margin-top: 12px; }
+  .card .quiet { font-family: 'Forum', serif; font-size: 19px; color: var(--brown); }
+
+  footer {
+    text-align: center;
+    padding: 46px 0 34px;
+    font-size: 11.5px;
+    letter-spacing: .18em;
+    color: var(--taupe);
+    position: relative;
+    z-index: 10;
+  }
+  footer a { color: var(--taupe); text-decoration: none; }
+</style>
+</head>
+
+<body>
+
+<header class="wrap">
+  <div class="wordmark">LILIMEI<small>OLD JAFFA</small></div>
+</header>
+
+<main class="wrap">
+
+  <div class="mark">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="30" cy="30" r="28" stroke="#E4A745" stroke-width="1.5"/>
+      <path d="M19 30.5 L26.5 38 L41 23" stroke="#684E40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <h1>We have your <em>details</em></h1>
+  <p class="lede">Thank you. You are on the list for the next Paper Whispers session in Jaffa.</p>
+
+  <div class="card">
+    <p class="quiet">You will hear from us before anyone else.</p>
+    <p>When the next dates are set, we will write to you first, while there are still seats to choose from.</p>
+    <p>Nothing to pay, and nothing else to do today.</p>
+  </div>
+
+</main>
+
+<footer>
+  <a href="https://www.lilimeitlv.com">LILIMEITLV.COM</a>
+</footer>
+
+<script>
+  (function () {
+    var isLocal = location.protocol === 'file:' || location.hostname === 'localhost';
+    if (isLocal) return;
+
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1433857244466235');
+    fbq('track', 'PageView');
+
+    // A waitlist signup is a Lead, not a CompleteRegistration. The embedded form
+    // fires the same event with the same eventID, so Meta dedupes the pair.
+    var id = null;
+    try { id = sessionStorage.getItem('pwLeadEventId'); } catch (x) {}
+    if (!id) id = 'pw-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+    try { sessionStorage.removeItem('pwLeadEventId'); } catch (x) {}
+    fbq('track', 'Lead', { content_name: 'paper-whispers-waitlist' }, { eventID: id });
+  })();
+</script>
+
+</body>
+</html>

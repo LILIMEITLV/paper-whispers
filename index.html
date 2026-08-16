@@ -176,6 +176,37 @@
   .bio p { font-size: 16px; color: var(--ink); }
   .bio .name { font-family: 'Forum', serif; font-size: 18px; color: var(--brown); display: block; margin-bottom: 4px; }
 
+  .closed-banner {
+    position: relative;
+    z-index: 20;
+    background: var(--brown);
+    color: #fdf6ec;
+    text-align: center;
+    padding: 16px 22px;
+  }
+  .closed-banner strong {
+    display: block;
+    font-family: 'Forum', serif;
+    font-weight: 400;
+    font-size: 19px;
+    letter-spacing: .01em;
+  }
+  .closed-banner span {
+    display: block;
+    font-size: 14.5px;
+    opacity: .85;
+    margin-top: 4px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+  .closed-banner a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   .last-call { text-align: center; padding: 48px 0 12px; }
   .last-call p { font-family: 'Forum', serif; font-size: clamp(20px, 5.5vw, 26px); color: var(--brown); max-width: 430px; margin: 0 auto; line-height: 1.35; }
 
@@ -196,6 +227,11 @@
 </head>
 <body>
 
+<div class="closed-banner">
+  <strong>Thank you for your interest. Registration for these sessions is closed.</strong>
+  <span>If you would like to hear when the next one opens, <a href="#register">leave us your details</a> and we will let you know first.</span>
+</div>
+
 <header class="wrap">
   <div class="wordmark">LILIMEI<small>OLD JAFFA</small></div>
   <div class="hero-band">
@@ -209,17 +245,17 @@
     <h1>Paper<br><span>Whispers</span></h1>
     <p class="sub">An Introductory Art-Journaling Session in Jaffa's Greek Market</p>
     <p class="whisper">Some thoughts arrive as words. Others arrive as colors, shapes and textures. In one inspired hour, you will let them meet on paper.</p>
-    <a class="cta" href="#register">Save my seat</a>
+    <a class="cta" href="#register">Keep me posted</a>
   </div>
 
   <div class="facts">
     <div class="fact">
-      <div class="k">Friday, Sept 4 <em>or</em> Tuesday, Sept 8</div>
-      <div class="v">10:30 to 11:30 am &middot; 6:00 to 7:00 pm. Pick one on the form.</div>
+      <div class="k">Next session <em>to be announced</em></div>
+      <div class="v">Mornings and evenings, as before. Leave your details and we will tell you first.</div>
     </div>
     <div class="fact">
       <div class="k">50 NIS</div>
-      <div class="v">All materials included. Pay after we confirm your seat.</div>
+      <div class="v">All materials included. Nothing to pay today.</div>
     </div>
     <div class="fact">
       <div class="k">Jaffa's Greek Market</div>
@@ -240,7 +276,7 @@
     </ul>
 
     <div style="text-align: center; margin-top: 30px;">
-      <a class="cta gold" href="#register">Save my seat</a>
+      <a class="cta gold" href="#register">Keep me posted</a>
     </div>
 
     <div class="bio">
@@ -253,8 +289,8 @@
   </section>
 
   <section id="register">
-    <h2>Hold your seat</h2>
-    <p class="lede">One minute, a few short questions. Choose your date inside the form. We will hold your seat and send you the payment link on WhatsApp.</p>
+    <h2>Be the first to know</h2>
+    <p class="lede">These sessions have closed. Leave your details and we will write to you when the next one opens, before it goes anywhere else.</p>
     <div class="form-card" id="form-card">
       <iframe data-tally-src="https://tally.so/embed/kdxDa1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
               loading="eager" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"
@@ -262,15 +298,15 @@
     </div>
     <div class="form-rescue" id="form-rescue" hidden>
       <p>The form is being shy. No matter, it opens in its own page.</p>
-      <a class="cta gold" href="https://tally.so/r/kdxDa1?utm_source=rescue">Open the registration form</a>
+      <a class="cta gold" href="https://tally.so/r/kdxDa1?utm_source=rescue">Open the form</a>
     </div>
     <p class="form-alt">Trouble with the form? <a href="https://tally.so/r/kdxDa1?utm_source=newtab" target="_blank" rel="noopener">Open it in a new tab</a></p>
   </section>
 
 
   <div class="last-call">
-    <p>The room is small on purpose. When the ten seats are taken, they are taken.</p>
-    <a class="cta gold" href="#register">Save my seat</a>
+    <p>The room is small on purpose. Ten seats, and they go to the people who asked first.</p>
+    <a class="cta gold" href="#register">Keep me posted</a>
   </div>
 
 </main>
@@ -336,8 +372,8 @@
         var d = JSON.parse(e.data);
         if (d && d.event === 'Tally.FormSubmitted') {
           var id = 'pw-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
-          try { sessionStorage.setItem('pwRegEventId', id); } catch (x) {}
-          fbq('track', 'CompleteRegistration', { content_name: 'paper-whispers-intro' }, { eventID: id });
+          try { sessionStorage.setItem('pwLeadEventId', id); } catch (x) {}
+          fbq('track', 'Lead', { content_name: 'paper-whispers-waitlist' }, { eventID: id });
         }
       } catch (err) { /* not a Tally message */ }
     });
