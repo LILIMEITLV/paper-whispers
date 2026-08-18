@@ -419,9 +419,9 @@
     fbq('track', 'PageView');
 
     // When Tally confirms a submission, tell Meta a registration happened,
-    // then send the whole page straight to the PayBox payment so the 50 NIS
-    // is paid immediately while intent is high (no waiting on a WhatsApp link).
-    var PAYBOX = 'https://links.payboxapp.com/bDwzUu9RS3b';
+    // then send the whole page to the payment page (PayBox or PayPal) so the
+    // 50 NIS is paid immediately while intent is high.
+    var PAY_PAGE = '/paper-whispers/pay/';
     window.addEventListener('message', function (e) {
       if (typeof e.data !== 'string') return;
       try {
@@ -430,7 +430,7 @@
           var id = 'pw-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
           try { sessionStorage.setItem('pwRegEventId', id); } catch (x) {}
           fbq('track', 'CompleteRegistration', { content_name: 'paper-whispers-intro' }, { eventID: id });
-          setTimeout(function () { window.location.href = PAYBOX; }, 600);
+          setTimeout(function () { window.location.href = PAY_PAGE; }, 600);
         }
       } catch (err) { /* not a Tally message */ }
     });
