@@ -154,5 +154,10 @@
   <a href="https://www.lilimeitlv.com">LILIMEITLV.COM</a>
 </footer>
 
+<script>
+  // Capture the private code handed off by the taster form (Tally submission id),
+  // keep it for this browsing session so the full-course pages can log who looked.
+  (function(){ try { var s = new URLSearchParams(location.search).get('s'); if (s) { sessionStorage.setItem('pw_s', s); } } catch (e) {} })();
+</script>
 </body>
 </html>
