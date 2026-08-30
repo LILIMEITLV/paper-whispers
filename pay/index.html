@@ -159,5 +159,34 @@
   // keep it for this browsing session so the full-course pages can log who looked.
   (function(){ try { var s = new URLSearchParams(location.search).get('s'); if (s) { sessionStorage.setItem('pw_s', s); } } catch (e) {} })();
 </script>
+
+<script>
+  // Meta pixel: same pixel as the landing page. Reaching this page means the
+  // registration form was completed, so we log the checkout starting, and a
+  // click on either pay button as the deepest signal we can see (the payment
+  // itself finishes inside PayBox / PayPal, out of the pixel's sight).
+  (function () {
+    var h = location.hostname;
+    var isLocal = location.protocol === 'file:' || h === 'localhost' || h === '127.0.0.1' || h === '';
+    if (isLocal) return;
+
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1433857244466235');
+    fbq('track', 'PageView');
+    fbq('track', 'InitiateCheckout', { content_name: 'paper-whispers-intro', value: 50, currency: 'ILS' });
+
+    var payLinks = document.querySelectorAll('.pay a.btn');
+    for (var i = 0; i < payLinks.length; i++) {
+      payLinks[i].addEventListener('click', function () {
+        var method = this.className.indexOf('paypal') !== -1 ? 'paypal' : 'paybox';
+        fbq('track', 'AddPaymentInfo', { content_name: 'paper-whispers-intro', value: 50, currency: 'ILS', content_category: method });
+      });
+    }
+  })();
+</script>
 </body>
 </html>
