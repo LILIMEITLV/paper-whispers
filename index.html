@@ -344,8 +344,13 @@
     <h2>Hold your seat</h2>
     <p class="lede">One minute, a few short questions. Choose your date, then secure your seat with the 50 NIS payment at the end of the form. That is all it takes.</p>
     <div class="form-card" id="form-card">
-      <iframe data-tally-src="https://tally.so/embed/kdxDa1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="eager" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0"
+      <!-- src set directly: Tally's helper never auto-starts this embed, so waiting
+           for it (or the 3.5s rescue timer) only delayed the form. Loading eagerly
+           here starts the form together with the page. dynamicHeight resize and the
+           rescue fallbacks below still work unchanged. -->
+      <iframe src="https://tally.so/embed/kdxDa1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              data-tally-src="https://tally.so/embed/kdxDa1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="eager" width="100%" height="1950" frameborder="0" marginheight="0" marginwidth="0"
               title="Paper Whispers registration"></iframe>
     </div>
     <div class="form-rescue" id="form-rescue" hidden>
