@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paper Whispers | An Introductory Art-Journaling Session in Jaffa's Greek Market | LILIMEI</title>
-<meta name="description" content="Paper Whispers, an introductory art-journaling session in Jaffa's Greek Market. 50 NIS, materials included. Save your seat.">
+<meta name="description" content="Paper Whispers, an introductory art-journaling session in Jaffa's Greek Market. Registration is closed for now. Leave your details to hear the next dates first.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Forum&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -115,6 +115,16 @@
   .fact .k em { font-style: normal; color: var(--gold); }
 
   section { padding: 46px 0 0; }
+  .closed-note {
+    margin-top: 26px;
+    background: #fffdf9;
+    border: 1px solid var(--gold);
+    border-radius: 14px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .closed-note .headline { font-family: 'Forum', serif; font-size: 19px; color: var(--brown); }
+  .closed-note p { font-size: 15.5px; color: #55483d; margin-top: 6px; }
   h2 {
     font-family: 'Forum', serif;
     font-weight: 400;
@@ -275,21 +285,26 @@
 
 <main class="wrap">
 
+  <div class="closed-note">
+    <p class="headline">Registration is now closed</p>
+    <p>Thank you for all the interest in the September sessions. New dates are on their way. Leave your details below and you will be the first to hear.</p>
+  </div>
+
   <div class="hero">
     <h1>Paper<br><span>Whispers</span></h1>
     <p class="sub">An Introductory Art-Journaling Session in Jaffa's Greek Market</p>
     <p class="whisper">Some thoughts arrive as words. Others arrive as colors, shapes and textures. In one inspired hour, you will let them meet on paper.</p>
-    <a class="cta gold" href="#register">Save my seat</a>
+    <a class="cta gold" href="#register">Keep me posted</a>
   </div>
 
   <div class="facts">
     <div class="fact">
-      <div class="k">Friday, Sept 18 <em>or</em> Tuesday, Sept 22</div>
-      <div class="v">10:30 to 11:30 am &middot; 6:00 to 7:00 pm. Pick one on the form.</div>
+      <div class="k">Next dates <em>to be announced</em></div>
+      <div class="v">Leave your details below and you will hear first.</div>
     </div>
     <div class="fact">
       <div class="k">50 NIS</div>
-      <div class="v">All materials included. The 50 NIS secures your seat when you register.</div>
+      <div class="v">All materials included.</div>
     </div>
     <div class="fact">
       <div class="k">Jaffa's Greek Market</div>
@@ -314,7 +329,7 @@
     </ul>
 
     <div style="text-align: center; margin-top: 30px;">
-      <a class="cta gold" href="#register">Save my seat</a>
+      <a class="cta gold" href="#register">Keep me posted</a>
     </div>
 
     <div class="bio">
@@ -341,8 +356,8 @@
   </section>
 
   <section id="register">
-    <h2>Hold your seat</h2>
-    <p class="lede">One minute, a few short questions. Choose your date, then secure your seat with the 50 NIS payment at the end of the form. That is all it takes.</p>
+    <h2>Be the first to hear</h2>
+    <p class="lede">Registration for the September sessions is closed. Leave your details, and when the next dates are set we will write to you first, while there are still seats to choose from.</p>
     <div class="form-card" id="form-card">
       <!-- src set directly: Tally's helper never auto-starts this embed, so waiting
            for it (or the 3.5s rescue timer) only delayed the form. Loading eagerly
@@ -351,10 +366,10 @@
       <iframe src="https://tally.so/embed/kdxDa1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
               data-tally-src="https://tally.so/embed/kdxDa1?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
               loading="eager" width="100%" height="1950" frameborder="0" marginheight="0" marginwidth="0"
-              title="Paper Whispers registration"></iframe>
+              title="Paper Whispers waiting list"></iframe>
     </div>
     <div class="form-rescue" id="form-rescue" hidden>
-      <a class="cta gold" href="https://tally.so/r/kdxDa1?utm_source=rescue">Open the registration form</a>
+      <a class="cta gold" href="https://tally.so/r/kdxDa1?utm_source=rescue">Open the form</a>
     </div>
     <p class="form-alt">Trouble with the form? <a href="https://tally.so/r/kdxDa1?utm_source=newtab" target="_blank" rel="noopener">Open it in a new tab</a></p>
 
@@ -368,8 +383,8 @@
 
 
   <div class="last-call">
-    <p>The room is small on purpose. When the ten seats are taken, they are taken.</p>
-    <a class="cta gold" href="#register">Save my seat</a>
+    <p>The circle stays small on purpose, so the list hears first.</p>
+    <a class="cta gold" href="#register">Keep me posted</a>
   </div>
 
 </main>
@@ -426,19 +441,20 @@
     fbq('init', '1433857244466235');
     fbq('track', 'PageView');
 
-    // When Tally confirms a submission, tell Meta a registration happened,
-    // then send the whole page to the payment page (PayBox or PayPal) so the
-    // 50 NIS is paid immediately while intent is high.
-    var PAY_PAGE = '/paper-whispers/pay/';
+    // Registration is closed: a submission here is a waiting-list signup.
+    // It fires Lead (never CompleteRegistration, so registration data stays
+    // clean if the course restarts) and lands on the notified page, which
+    // fires the same Lead with the same eventID so Meta dedupes the pair.
+    var NOTIFIED_PAGE = '/paper-whispers/notified/';
     window.addEventListener('message', function (e) {
       if (typeof e.data !== 'string') return;
       try {
         var d = JSON.parse(e.data);
         if (d && d.event === 'Tally.FormSubmitted') {
           var id = 'pw-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
-          try { sessionStorage.setItem('pwRegEventId', id); } catch (x) {}
-          fbq('track', 'CompleteRegistration', { content_name: 'paper-whispers-intro' }, { eventID: id });
-          setTimeout(function () { window.location.href = PAY_PAGE; }, 600);
+          try { sessionStorage.setItem('pwLeadEventId', id); } catch (x) {}
+          fbq('track', 'Lead', { content_name: 'paper-whispers-waitlist' }, { eventID: id });
+          setTimeout(function () { window.location.href = NOTIFIED_PAGE; }, 600);
         }
       } catch (err) { /* not a Tally message */ }
     });
