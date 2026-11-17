@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Whispers - registration | LILIMEI</title>
+<meta name="description" content="הרשמה לסדנת Paper Whispers בשוק היווני ביפו. Registration for the Paper Whispers art journaling workshop in Jaffa's Greek Market.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paper Whispers | registration">
+<meta property="og:description" content="ארבעה מפגשים, ימי ב' בבוקר או ימי ג' בערב. Four sessions, Monday mornings or Tuesday evenings.">
+<meta property="og:image" content="https://lilimeitlv.github.io/paper-whispers/img/session-share.jpg">
+<meta property="og:url" content="https://lilimeitlv.github.io/paper-whispers/register/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&family=Rubik:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="https://www.lilimeitlv.com">LILIMEI</a>
+</header>
+
+<div class="hero-photo">
+  <img src="../img/session.webp" width="824" height="1100" alt="מפגש Paper Whispers בחלל של לילימיי, משתתפים יוצרים ביומני אמנות סביב השולחן">
+</div>
+
+<div class="title upper" dir="ltr">
+  <h1>Paper Whispers</h1>
+  <p class="sub">Art journaling workshop</p>
+</div>
+
+<section class="reg">
+  <div class="wrap reg-grid">
+    <div dir="ltr" lang="en">
+      <p class="head">Four sessions - one session per week</p>
+      <ul>
+        <li>Mondays: 10:30-12:30</li>
+        <li class="or">- or -</li>
+        <li>Tuesdays: 17:00-19:00</li>
+      </ul>
+      <div class="block">
+        <p>Participation fee: 900 shekels</p>
+        <p>(including materials)</p>
+      </div>
+      <div class="block">
+        <p>Location: Yo'ezer Ish HaBira 7 A, The Greek Market-Jaffa, TLV</p>
+      </div>
+    </div>
+    <div dir="rtl" lang="he">
+      <p class="head">ארבעה מפגשים - מפגש אחד שבועי</p>
+      <ul>
+        <li>ימי ב': <span dir="ltr">10:30-12:30</span></li>
+        <li class="or">- או -</li>
+        <li>ימי ג': <span dir="ltr">17:00-19:00</span></li>
+      </ul>
+      <div class="block">
+        <p>עלות: 900 שקלים</p>
+        <p>(כולל חומרים)</p>
+      </div>
+      <div class="block">
+        <p>כתובת: רחוב יועזר איש הבירה 7 א,</p>
+        <p>השוק היווני, צפון יפו</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-wrap" id="register">
+  <div id="form-card">
+    <iframe src="https://tally.so/embed/ODExGa?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            data-tally-src="https://tally.so/embed/ODExGa?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="eager" width="100%" height="2300" frameborder="0" marginheight="0" marginwidth="0"
+            title="Paper Whispers registration"></iframe>
+  </div>
+  <div id="form-rescue" class="btn-row" hidden>
+    <a class="btn" href="https://tally.so/r/ODExGa?utm_source=rescue">לטופס ההרשמה | Open the registration form</a>
+  </div>
+  <p class="form-alt">הטופס לא נטען? <a href="https://tally.so/r/ODExGa?utm_source=newtab" target="_blank" rel="noopener">פתיחה בלשונית חדשה</a> | Form not loading? <a href="https://tally.so/r/ODExGa?utm_source=newtab" target="_blank" rel="noopener">Open it in a new tab</a></p>
+</section>
+
+<footer class="site-footer">
+  <a class="logo" href="https://www.lilimeitlv.com">LILIMEI</a>
+  <p class="tag" dir="rtl"><a href="https://www.lilimeitlv.com" style="text-decoration:none">מקום להתפתחות, חיבור והשראה בצפון יפו</a></p>
+  <p class="copy">© 2026 by LILIMEI</p>
+  <p class="legal"><a href="../terms/">תנאי שימוש ומדיניות פרטיות | Terms of Service and Privacy Policy</a></p>
+</footer>
+
+<script async src="https://tally.so/widgets/embed.js"></script>
+<script src="../pixel.js"></script>
+<script>
+  // Rescue for slow in-app browsers (Instagram, WhatsApp): if the form shows no
+  // sign of life after 9s, offer a direct button; bring the form back if it wakes.
+  (function () {
+    var alive = false;
+    var card = document.getElementById('form-card');
+    var rescue = document.getElementById('form-rescue');
+    window.addEventListener('message', function (e) {
+      if (e.origin && e.origin.indexOf('tally.so') !== -1) {
+        alive = true; card.hidden = false; rescue.hidden = true;
+      }
+    });
+    setTimeout(function () { if (!alive) { card.hidden = true; rescue.hidden = false; } }, 9000);
+  })();
+
+  // A finished form is a registration: tell Meta, then hand the visitor straight
+  // to the 50 NIS payment page while intent is high.
+  (function () {
+    window.addEventListener('message', function (e) {
+      if (typeof e.data !== 'string') return;
+      try {
+        var d = JSON.parse(e.data);
+        if (d && d.event === 'Tally.FormSubmitted') {
+          var id = 'pw-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+          pwTrack('track', 'CompleteRegistration', { content_name: 'paper-whispers-workshop' }, { eventID: id });
+          setTimeout(function () { window.location.href = '../pay/'; }, 600);
+        }
+      } catch (err) { /* not a Tally message */ }
+    });
+  })();
+</script>
+</body>
+</html>
