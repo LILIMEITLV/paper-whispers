@@ -67,16 +67,92 @@
 </section>
 
 <section class="form-wrap" id="register">
-  <div id="form-card">
-    <iframe src="https://tally.so/embed/ODExGa?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            data-tally-src="https://tally.so/embed/ODExGa?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="eager" width="100%" height="2300" frameborder="0" marginheight="0" marginwidth="0"
-            title="Paper Whispers registration"></iframe>
+  <div class="intro-grid">
+    <div dir="rtl" lang="he">
+      <h2>הרשמה ורשימת המתנה</h2>
+      <p>שמחות לקבל אתכם להרשמה לסדנת <span dir="ltr">Paper Whispers</span>. התאריכים הרשמיים יפורסמו בקרוב ומספר המקומות מוגבל (עד 10 משתתפים), ולכן בנינו תהליך גמיש וללא סיכון לשמירת המקום שלכם.</p>
+      <p class="h">איך זה עובד:</p>
+      <ol>
+        <li>משאירים פרטי קשר (הם נשמרים בהתאם למדיניות הפרטיות שלנו).</li>
+        <li>בוחרים את המסלול המועדף (בוקר, ערב או שניהם).</li>
+        <li>משלמים דמי הרשמה של 50 ש"ח (מוחזרים במלואם אם המועד הסופי לא מתאים לכם).</li>
+      </ol>
+      <p>ברגע שהמסלול שלכם יגיע למספר המשתתפים המינימלי, תהיו הראשונים לדעת את התאריכים הרשמיים ולשריין את מקומכם.</p>
+      <p><strong>ללא סיכון:</strong> דמי ההרשמה (50 ש"ח) מקוזזים משכר הלימוד ומוחזרים במלואם אם תחליטו לא להצטרף לסדנה.</p>
+    </div>
+    <div dir="ltr" lang="en">
+      <h2>Registration &amp; Waiting List</h2>
+      <p>We are thrilled to welcome you to the registration for Paper Whispers. As official dates will be announced soon and spots are strictly limited (maximum 10 participants), we've created a flexible, risk-free process to secure your place.</p>
+      <p class="h">How it works:</p>
+      <ol>
+        <li>Give us your basic contact details (these will be stored under our privacy policy)</li>
+        <li>Select your preferred track (Morning, Evening, or both).</li>
+        <li>Pay a 50 NIS registration fee (fully refundable if the final schedule doesn't work for you).</li>
+      </ol>
+      <p>Once your track reaches minimum capacity, you'll be the first to know the official dates and lock in your spot.</p>
+      <p><strong>Risk-Free:</strong> The 50 NIS registration fee will be deducted from your tuition and is 100% refundable if you decide not to join the workshop.</p>
+    </div>
   </div>
-  <div id="form-rescue" class="btn-row" hidden>
-    <a class="btn" href="https://tally.so/r/ODExGa?utm_source=rescue">לטופס ההרשמה | Open the registration form</a>
-  </div>
-  <p class="form-alt">הטופס לא נטען? <a href="https://tally.so/r/ODExGa?utm_source=newtab" target="_blank" rel="noopener">פתיחה בלשונית חדשה</a> | Form not loading? <a href="https://tally.so/r/ODExGa?utm_source=newtab" target="_blank" rel="noopener">Open it in a new tab</a></p>
+
+  <form class="pw-form" id="pwForm" novalidate>
+    <div class="row2">
+      <label><bdi dir="rtl">שם פרטי</bdi> / First Name *<input name="first" autocomplete="given-name" required></label>
+      <label><bdi dir="rtl">שם משפחה</bdi> / Last Name *<input name="last" autocomplete="family-name" required></label>
+    </div>
+    <div class="row2">
+      <label><bdi dir="rtl">אימייל</bdi> / Email *<input name="email" type="email" autocomplete="email" dir="ltr" required></label>
+      <label><bdi dir="rtl">טלפון נייד</bdi> / Cell Phone *<input name="phone" type="tel" autocomplete="tel" dir="ltr" required></label>
+    </div>
+
+    <fieldset class="tracks">
+      <legend><bdi dir="rtl">המסלול המועדף (אפשר לבחור אחד או שניהם)</bdi> / I prefer (choose one or both) *</legend>
+      <label class="choice"><input type="checkbox" name="track" value="ימי ב' 10:30-12:30"><span><bdi dir="rtl">ימי ב' <span dir="ltr">10:30-12:30</span></bdi> / Mondays 10:30-12:30</span></label>
+      <label class="choice"><input type="checkbox" name="track" value="ימי ג' 17:00-19:00"><span><bdi dir="rtl">ימי ג' <span dir="ltr">17:00-19:00</span></bdi> / Tuesdays 17:00-19:00</span></label>
+    </fieldset>
+
+    <div class="policy">
+      <div dir="rtl" lang="he">
+        <h3>מדיניות הרשמה ורשימת המתנה</h3>
+        <p class="h">1. רשימת המתנה ודמי הרשמה לשמירת מקום</p>
+        <p>התאריכים הרשמיים של הסדנה יפורסמו בקרוב.</p>
+        <p>אפשר לבחור גם את מסלול הבוקר וגם את מסלול הערב. מי שבוחר בשניהם יקבל הודעה ברגע שהמסלול הראשון יגיע למספר המשתתפים המינימלי.</p>
+        <p>החזר דמי ההרשמה: דמי ההרשמה (50 ש"ח) מוחזרים במלואם בכל שלב לפני פרסום התאריכים הרשמיים, או אם התאריכים שפורסמו אינם מתאימים לכם.</p>
+        <p class="h">2. שכר לימוד ומדיניות ביטולים</p>
+        <p>עלות הסדנה המלאה: 900 ש"ח (היתרה, 850 ש"ח, תשולם עם פרסום התאריכים ולוח הזמנים הרשמיים).</p>
+        <p>ביטולים לפני תחילת הסדנה: ביטולים והחזרים לאחר תשלום מלא יטופלו בהתאם לחוק הגנת הצרכן.</p>
+        <p>אפשר לבטל את ההרשמה ולקבל החזר לאחר המפגש הראשון בלבד. מי שהשתתף במפגש והחליט שזה לא בשבילו, ינוכו 225 ש"ח עבור המפגש, ויתרת שכר הלימוד תוחזר.</p>
+        <p>לא יתקבלו ביטולים ולא יינתנו החזרים לאחר סיום המפגש השני.</p>
+      </div>
+      <div dir="ltr" lang="en">
+        <h3>Course Registration &amp; Waiting List Policy</h3>
+        <p class="h">1. Waiting List &amp; Secure Spot Deposit</p>
+        <p>The official dates for the workshop will be announced soon.</p>
+        <p>You may select both morning and evening track options. If you select both, you will be notified as soon as the first track reaches the minimum number of participants.</p>
+        <p>Deposit Refund: The 50 NIS registration fee is fully refundable at any stage prior to the official announcement of the course dates, or if the announced dates do not match your availability.</p>
+        <p class="h">2. Full Tuition &amp; Cancellation Policy</p>
+        <p>Total Course Tuition: 900 NIS (The remaining balance of 850 NIS will be due upon the official announcement of the course dates and schedule).</p>
+        <p>Cancellations Before the Course Starts: Any cancellations and refunds after full payment has been made will be processed in accordance with the Israeli Consumer Protection Law.</p>
+        <p>You may cancel your registration and receive a refund after attending the first lesson only. If you attended the lesson and decided it is not for you, a fee of 225 NIS will be deducted for the lesson attended, and the remainder of the tuition will be refunded.</p>
+        <p>No refunds or cancellations will be accepted after the conclusion of the second lesson.</p>
+      </div>
+    </div>
+
+    <div class="before">
+      <p dir="rtl"><strong>לפני השליחה:</strong> בלחיצה על "שליחה" הפרטים יישמרו ותעברו לעמוד התשלום כדי להשלים את דמי ההרשמה (50 ש"ח). חשוב להשלים את התשלום כדי לשמור את מקומכם ברשימה.</p>
+      <p dir="ltr"><strong>Important Note Before Submitting:</strong> By clicking "Submit", your registration details will be saved, and you will be taken to the payment page (PayBox or PayPal) to complete the 50 NIS deposit. Please ensure you complete the payment on the next screen to finalize and secure your spot on the waiting list.</p>
+    </div>
+
+    <label class="choice consent"><input type="checkbox" name="consent" value="yes" required><span><bdi dir="rtl">קראתי ואני מאשר/ת את <a href="../terms/" target="_blank">תנאי השימוש ומדיניות הפרטיות</a> של <span dir="ltr">LILIMEI</span></bdi> / I have read and agree to LILIMEI's <a href="../terms/" target="_blank">terms of service and privacy policy</a> *</span></label>
+
+    <input type="hidden" name="form" value="paper-whispers">
+    <input type="hidden" name="page" value="Paper Whispers">
+    <input type="hidden" name="service" value="">
+    <input type="hidden" name="message" value="">
+    <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">
+
+    <p class="form-error" id="pwError" role="alert" hidden></p>
+    <div class="btn-row"><button class="btn" type="submit">שליחה ומעבר לתשלום / Submit and continue to payment</button></div>
+  </form>
 </section>
 
 <footer class="site-footer">
@@ -86,36 +162,50 @@
   <p class="legal"><a href="../terms/">תנאי שימוש ומדיניות פרטיות | Terms of Service and Privacy Policy</a></p>
 </footer>
 
-<script async src="https://tally.so/widgets/embed.js"></script>
 <script src="../pixel.js"></script>
 <script>
-  // Rescue for slow in-app browsers (Instagram, WhatsApp): if the form shows no
-  // sign of life after 9s, offer a direct button; bring the form back if it wakes.
+  // Our own form: posts to the LILIMEI forms web app (Apps Script under the
+  // lilimeitlv account), then counts the registration and sends the visitor
+  // straight to the 50 NIS payment page while intent is high.
   (function () {
-    var alive = false;
-    var card = document.getElementById('form-card');
-    var rescue = document.getElementById('form-rescue');
-    window.addEventListener('message', function (e) {
-      if (e.origin && e.origin.indexOf('tally.so') !== -1) {
-        alive = true; card.hidden = false; rescue.hidden = true;
-      }
-    });
-    setTimeout(function () { if (!alive) { card.hidden = true; rescue.hidden = false; } }, 9000);
-  })();
+    var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwiQ0opx-Zug9aRh5mooubpreGeqxhRqqtP_YdcQlducE3EUwk3NVjzRzHho4CO_LZc/exec';
+    var form = document.getElementById('pwForm');
+    var err = document.getElementById('pwError');
+    var btn = form.querySelector('button');
+    var label = btn.textContent;
 
-  // A finished form is a registration: tell Meta, then hand the visitor straight
-  // to the 50 NIS payment page while intent is high.
-  (function () {
-    window.addEventListener('message', function (e) {
-      if (typeof e.data !== 'string') return;
-      try {
-        var d = JSON.parse(e.data);
-        if (d && d.event === 'Tally.FormSubmitted') {
+    function fail(msg) { err.textContent = msg; err.hidden = false; }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      err.hidden = true;
+      var tracks = [].map.call(form.querySelectorAll('input[name=track]:checked'), function (c) { return c.value; });
+      if (!form.first.value.trim() || !form.last.value.trim() || !form.email.value.trim() || !form.phone.value.trim()) {
+        return fail('נא למלא שם, אימייל וטלפון. / Please fill in your name, email and phone.');
+      }
+      if (!form.email.checkValidity()) return fail('כתובת האימייל לא תקינה. / Please check your email address.');
+      if (!tracks.length) return fail('נא לבחור מסלול אחד לפחות. / Please choose at least one track.');
+      if (!form.consent.checked) return fail('נא לאשר את תנאי השימוש. / Please agree to the terms.');
+
+      var data = new URLSearchParams(new FormData(form));
+      data.delete('track');
+      data.set('tracks', tracks.join(' + '));
+      data.set('lang', document.documentElement.lang);
+      // Older script versions read service/message; keep them filled so nothing is lost.
+      data.set('service', 'Paper Whispers');
+      data.set('message', 'הרשמה לסדנת Paper Whispers. מסלול: ' + tracks.join(' + ') + '. אישר/ה תנאים.');
+
+      btn.disabled = true; btn.textContent = 'שולח... / Sending...';
+      fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, body: data })
+        .then(function () {
           var id = 'pw-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
           pwTrack('track', 'CompleteRegistration', { content_name: 'paper-whispers-workshop' }, { eventID: id });
-          setTimeout(function () { window.location.href = '../pay/'; }, 600);
-        }
-      } catch (err) { /* not a Tally message */ }
+          setTimeout(function () { window.location.href = '../pay/'; }, 400);
+        })
+        .catch(function () {
+          btn.disabled = false; btn.textContent = label;
+          fail('משהו השתבש בשליחה. אפשר לנסות שוב או לכתוב לנו בוואטסאפ 054-7520282. / Something went wrong. Please try again or message us on WhatsApp.');
+        });
     });
   })();
 </script>
