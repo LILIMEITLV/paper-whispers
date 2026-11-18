@@ -1,0 +1,1 @@
+Paper Whispers moved to https://lilimeitlv.com/paper-whispers/ (18.11.26). This repo only forwards old links. Source of the live pages: LILIMEI system, O-output/13-website-clone/rebuild/paper-whispers/.
