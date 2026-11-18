@@ -17,7 +17,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 
 .site-header {
   position: sticky; top: 0; z-index: 20;
